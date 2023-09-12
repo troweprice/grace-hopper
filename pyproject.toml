@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
+known_third_party = ["chromadb", "dotenv", "fastapi", "langchain", "llama_cpp", "pydantic", "pytest", "requests", "structlog", "tqdm", "transformers"]
+py_version = 310
+
+[tool.black]
+target-version = ["py310"]
+
+[tool.pylint.format]
+max-line-length = 88
+good-names = ["e", "df"]
+
+
+[tool.pylint."MESSAGE CONTROL"]
+extension-pkg-whitelist = "pydantic"
+disable =[
+    "too-many-arguments",
+    "too-many-instance-attributes",
+    "too-few-public-methods",
+    "protected-access",
+    "duplicate-code",
+    "redefined-outer-name",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "too-many-locals",
+    "invalid-name",
+    "line-too-long",
+    "pointless-string-statement",
+    "unused-argument",
+    "missing-class-docstring",
+]
+
+[tool.pylint.MASTER]
+ignore-paths = [ "^tests/resources/$", "main.py", "LICENSE","src/infrastructure/huggingface_downloader.py",]
+
+[tool.pydocstyle]
+convention = "google"
+match-dir='^src/'
+add-ignore = ["D100", "D107", "D101", "D104", "D407", "D213", "D203"]
+
+[tool.mypy]
+ignore_missing_imports = true
