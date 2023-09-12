@@ -1,4 +1,4 @@
-FROM docker-release-local.docker.awstrp.net/com/trp/ea/unity-base-docker/python/python:3.10-18
+FROM python:3.10-18
 
 
 WORKDIR /app
