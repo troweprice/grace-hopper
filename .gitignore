@@ -1,0 +1,8 @@
+.idea
+copilot
+*.pytest_cache
+*env
+*__pycache__*
+.DS_Store
+src/model/downloaded_models/
+*cache*

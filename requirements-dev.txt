@@ -1,0 +1,3 @@
+# For dev environment only, not required to run the project
+pre-commit~=3.3.1
+pylint~=2.17.2
